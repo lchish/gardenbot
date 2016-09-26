@@ -1,0 +1,40 @@
+body{
+}
+
+div{
+	margin-top: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+	border-radius: 2em;
+	background-color: A8CEFF;
+}
+
+h1 {
+	padding-top: 1em;
+	padding-left: 2.2em;
+	padding-right: 2.2em;
+	font-family: Verdana;
+	font-size: 3.5em;
+	color: black;
+	text-align: left;
+} 
+h2 {
+	margin-left: 1em;
+	margin-right: 1em;
+	background-color: white;
+	border-radius: 0.1em;	
+	font-family: Verdana;
+	font-size: 8em;
+	font-color: A8CEFF;
+	color: black;
+	text-align: center;
+}
+h3 {
+	padding-left: 4.4em;
+	font-family: Verdana;
+	font-size: 2em;
+	color: black;
+	text-align: left;
+	padding-bottom: 2em;
+}
