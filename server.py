@@ -1,7 +1,6 @@
 import tornado.ioloop
 import tornado.web
 import tornado.websocket
-import webview
 import threading
 import math
 import time
@@ -64,15 +63,7 @@ def stop_tornado():
     tornado.ioloop.IOLoop.current().stop()
 
 def start():
-    try:
-        tornado_thread = threading.Thread(target=start_tornado, daemon=True)
-        tornado_thread.start()
-
-        # You might want to remove the webview. I find it nice for debugging
-        webview.create_window("It works, Jaden!", "http://127.0.0.1:8888", fullscreen = False)
-    finally:
-        webview.destroy_window()
-        stop_tornado()
+        start_tornado()
 
 if __name__ == "__main__":
     start()
