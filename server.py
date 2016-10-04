@@ -6,6 +6,7 @@ import math
 import time
 import random
 import json
+import os
 
 PORT = 8888
 SLEEP_TIME = 1
@@ -48,11 +49,17 @@ class JadensWebSocket(tornado.websocket.WebSocketHandler):
         self.writetobrowser = False
         print("WebSocket closed")
 
+
+settings = {
+    "static_path": os.path.join(os.path.dirname(__file__), "static"),
+}
+
 def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/websocket", JadensWebSocket),
-    ])
+        (r"/mystyles.css", tornado.web.StaticFileHandler, dict(path=settings['static_path'])),
+    ], **settings)
 
 def start_tornado():
     app = make_app()
